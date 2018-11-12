@@ -1,10 +1,6 @@
 package cy.ac.ucy.cs.epl341.team5.lightglide.db.model
 
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Delete
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Query
-import java.sql.Timestamp
+import android.arch.persistence.room.*
 
 @Dao
 interface EnvironmentMetricsDao {
@@ -19,6 +15,9 @@ interface EnvironmentMetricsDao {
     @Delete
     fun delete(metrics: EnvironmentMetrics)
 
+    @Update
+    fun update(metrics: EnvironmentMetrics)
+
 }
 
 @Dao
@@ -30,13 +29,15 @@ interface MetricsDao {
     @Query("SELECT * FROM Metrics m where m.fpid = :fpid")
     fun getFor(fpid:Int): List<Metrics>
 
-    fun getFor(fp:FlightPoint) = getFor(fp.id)
-
     @Insert
     fun insertAll(vararg metrics: Metrics)
 
     @Delete
     fun delete(metrics: Metrics)
+
+    @Update
+    fun update(metrics: Metrics)
+
 }
 
 @Dao
@@ -45,7 +46,7 @@ interface FlightPointDao{
     fun getAll(): List<FlightPoint>
     @Query("SELECT * FROM flightpoint fp WHERE fp.fid=:flightID")
     fun getFor(flightID:Int): List<FlightPoint>
-    fun getFor(flight: Flight) = getFor(flight.id)
+
 }
 
 @Dao
@@ -59,4 +60,7 @@ interface FlightDao {
 
     @Delete
     fun delete(flight: Flight)
+
+    @Update
+    fun udpate(flight: Flight)
 }

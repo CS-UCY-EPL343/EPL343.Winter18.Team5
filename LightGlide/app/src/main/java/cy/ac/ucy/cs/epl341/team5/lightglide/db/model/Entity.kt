@@ -1,9 +1,6 @@
 package cy.ac.ucy.cs.epl341.team5.lightglide.db.model
 
-import android.arch.persistence.room.ColumnInfo
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.ForeignKey
-import android.arch.persistence.room.PrimaryKey
+import android.arch.persistence.room.*
 import java.sql.Timestamp
 
 
@@ -30,19 +27,19 @@ data class Flight(
             ),
             ForeignKey(
                     parentColumns = ["timestamp"],
-                    childColumns = ["envMetric"],
-                    entity = FlightPoint::class
+                    childColumns = ["timestamp"],
+                    entity = EnvironmentMetrics::class
             )
-        ]
+        ],
+        indices = arrayOf(Index("timestamp"),Index("fid"))
 )
-
 data class FlightPoint(
         @ColumnInfo(name = "id") val id: Int,
         @ColumnInfo(name = "timestamp") val timestamp: Timestamp,
         @ColumnInfo(name = "fid") val fid: Int
 )
 
-@Entity
+@Entity(indices = arrayOf(Index("fpid")))
 data class EnvironmentMetrics(
         @ColumnInfo(name = "uv") val uv: Int,
         @PrimaryKey val timestamp: Timestamp,
@@ -60,7 +57,8 @@ data class EnvironmentMetrics(
                     parentColumns = ["id"],
                     childColumns = ["fpid"]
             )
-        ]
+        ],
+        indices = arrayOf(Index("fpid"),Index("timestamp"))
 )
 data class Metrics(
         @ColumnInfo(name = "altitude") val altitude: Double,

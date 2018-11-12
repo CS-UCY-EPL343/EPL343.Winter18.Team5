@@ -1,0 +1,200 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ac8fd5ee0d186060ee23bee5e70f43be",
+    "entities": [
+      {
+        "tableName": "EnvironmentMetrics",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uv` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `temperature` INTEGER NOT NULL, `humidity` INTEGER NOT NULL, `pressure` REAL NOT NULL, `fpid` INTEGER NOT NULL, PRIMARY KEY(`timestamp`))",
+        "fields": [
+          {
+            "fieldPath": "uv",
+            "columnName": "uv",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "temperature",
+            "columnName": "temperature",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "humidity",
+            "columnName": "humidity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressure",
+            "columnName": "pressure",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fpid",
+            "columnName": "fpid",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "timestamp"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_EnvironmentMetrics_fpid",
+            "unique": false,
+            "columnNames": [
+              "fpid"
+            ],
+            "createSql": "CREATE  INDEX `index_EnvironmentMetrics_fpid` ON `${TABLE_NAME}` (`fpid`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "FlightPoint",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `fid` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`fid`) REFERENCES `Flight`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`timestamp`) REFERENCES `EnvironmentMetrics`(`timestamp`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fid",
+            "columnName": "fid",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_FlightPoint_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "createSql": "CREATE  INDEX `index_FlightPoint_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          },
+          {
+            "name": "index_FlightPoint_fid",
+            "unique": false,
+            "columnNames": [
+              "fid"
+            ],
+            "createSql": "CREATE  INDEX `index_FlightPoint_fid` ON `${TABLE_NAME}` (`fid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Flight",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "fid"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          },
+          {
+            "table": "EnvironmentMetrics",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "timestamp"
+            ],
+            "referencedColumns": [
+              "timestamp"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Flight",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `start` INTEGER NOT NULL, `maxAltitude` INTEGER NOT NULL, `distance` REAL NOT NULL, `end` INTEGER NOT NULL, `duration` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "start",
+            "columnName": "start",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maxAltitude",
+            "columnName": "maxAltitude",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distance",
+            "columnName": "distance",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "end",
+            "columnName": "end",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "duration",
+            "columnName": "duration",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"ac8fd5ee0d186060ee23bee5e70f43be\")"
+    ]
+  }
+}
