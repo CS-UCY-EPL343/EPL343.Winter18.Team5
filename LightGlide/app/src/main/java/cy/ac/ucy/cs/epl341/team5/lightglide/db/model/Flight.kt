@@ -2,9 +2,7 @@ package cy.ac.ucy.cs.epl341.team5.lightglide.db.model
 
 import android.os.Parcel
 import android.os.Parcelable
-import java.sql.Time
 import java.sql.Timestamp
-import java.time.Duration
 
 data class Flight constructor(val name:String?, val start:Timestamp, val maxAltitude: Int, val distance: Double, val end: Timestamp, val duration: Int):Parcelable {
     constructor(parcel: Parcel) : this(
