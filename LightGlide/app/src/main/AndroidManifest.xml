@@ -16,7 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service android:name=".services.Bus" />
+
+        <activity android:name=".activities.Settings" android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

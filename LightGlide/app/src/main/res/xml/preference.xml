@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Pilot's Information">
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="weight"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Pilot's Weight"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="wing"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Wing Length"
+            android:inputType="numberDecimal" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Flight Mode">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="acceleration"
+            android:title="Display Acceleration" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="velocity"
+            android:title="Display Velocity" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="temperature"
+            android:title="Display Temperature" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="uv"
+            android:title="Display UV" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="gps"
+            android:title="Display Location" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="humidity"
+            android:title="Display Humidity" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pressure"
+            android:title="Display Pressure" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="App configuration">
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/ThemeName"
+            android:entryValues="@array/ThemeValue"
+            android:key="theme"
+            android:title="Theme" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/systemName"
+            android:entryValues="@array/systemValue"
+            android:key="measurment"
+            android:title="System of Measurement" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

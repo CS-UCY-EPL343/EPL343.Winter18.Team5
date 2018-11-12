@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ThemeName">
+        <item>Adamos</item>
+        <item>Andriani</item>
+        <item>Eleni</item>
+        <item>Panayiotis</item>
+        <item>Stefanos</item>
+        <item>Stelios</item>
+    </string-array>
+    <string-array name="ThemeValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="systemValue">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="systemName">
+        <item>Metric</item>
+        <item>Imperial</item>
+    </string-array>
+</resources>
