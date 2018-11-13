@@ -3,14 +3,14 @@
 
     <PreferenceCategory android:title="Pilot's Information">
         <EditTextPreference
-            android:defaultValue="Default value"
+            android:defaultValue="69"
             android:key="weight"
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Pilot's Weight"
             android:inputType="numberDecimal" />
         <EditTextPreference
-            android:defaultValue="Default value"
+            android:defaultValue="70"
             android:key="wing"
             android:selectAllOnFocus="true"
             android:singleLine="true"
@@ -61,6 +61,4 @@
             android:key="measurment"
             android:title="System of Measurement" />
     </PreferenceCategory>
-
-
 </PreferenceScreen>

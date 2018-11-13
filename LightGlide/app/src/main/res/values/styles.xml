@@ -7,5 +7,25 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!-- Use this theme in Manifest by default -->
+    <style name="MyLightTheme" parent="Base.AppTheme.Light"></style>
+
+    <!-- Base light theme containing all styles -->
+    <style name="Base.AppTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Red</item>
+        <item name="colorPrimaryDark">@color/Red</item>
+        <item name="colorAccent">@color/Red</item>
+    </style>
+
+    <!-- Use this to switch to Dark theme -->
+    <style name="MyDarkTheme" parent="Base.AppTheme.Dark"></style>
+
+    <!-- Base dark theme containing all styles -->
+    <style name="Base.AppTheme.Dark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/Blue</item>
+        <item name="colorPrimaryDark">@color/Blue</item>
+        <item name="colorAccent">@color/Blue</item>
+    </style>
 
 </resources>
