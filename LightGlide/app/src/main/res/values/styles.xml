@@ -2,30 +2,30 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/colorRallyBlack</item>
+        <item name="android:panelColorBackground">@color/colorBlackLight</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorRallyWhite</item>
+        <item name="colorPrimary">@color/colorRallyGreen</item>
+        <item name="colorPrimaryDark">@color/colorRallyDarkGreen</item>
+        <item name="colorError">@color/colorRallyOrange</item>
+        <item name="colorFloat">@color/colorRallyYellow</item>
+        <item name="colorAccent">@color/colorRallyPurple</item>
+        <item name="colorAccentAlt">@color/colorRallyBlue</item>
+    </style>
+
+
+    <style name="HighContrast">
+        <item name="colorBackgroundAlt">@color/colorRallyBlack</item>
+        <item name="colorTextAlt">@color/colorWhite</item>
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-    <!-- Use this theme in Manifest by default -->
-    <style name="MyLightTheme" parent="Base.AppTheme.Light"></style>
-
-    <!-- Base light theme containing all styles -->
-    <style name="Base.AppTheme.Light" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/Red</item>
-        <item name="colorPrimaryDark">@color/Red</item>
-        <item name="colorAccent">@color/Red</item>
+        <item name="colorPrimaryAlt">@color/colorPrimary</item>
+        <item name="colorRallyOrange">@color/colorRallyOrange</item>
+        <item name="colorRallyYellow">@color/colorRallyOrange</item>
+        <item name="colorRallyPurple">@color/colorRallyOrange</item>
+        <item name="colorRallyBlue">@color/colorRallyOrange</item>
     </style>
 
-    <!-- Use this to switch to Dark theme -->
-    <style name="MyDarkTheme" parent="Base.AppTheme.Dark"></style>
 
-    <!-- Base dark theme containing all styles -->
-    <style name="Base.AppTheme.Dark" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/Blue</item>
-        <item name="colorPrimaryDark">@color/Blue</item>
-        <item name="colorAccent">@color/Blue</item>
-    </style>
 
 </resources>
