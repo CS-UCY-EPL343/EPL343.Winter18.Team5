@@ -1,31 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:colorBackground">@color/colorRallyBlack</item>
-        <item name="android:panelColorBackground">@color/colorBlackLight</item>
+    <style name="HighContrastLightOrange" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/colorRallyOrange</item>
+
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:textColorPrimaryInverse">@color/colorWhite</item>
+        <item name="android:colorBackground">@color/colorWhite</item>
+        <item name="colorPrimary">@color/colorWhite</item>
+
+
+        <item name="android:colorForeground">@color/colorRallyBlack</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+        <item name="android:textColorSecondary">@color/colorBlackLight</item>
+
+        <item name="android:textColorSecondaryInverse">@color/colorRallyWhite</item>
+        <item name="colorPrimaryDark">@color/colorRallyWhite</item>
+
+
+        <item name="android:navigationBarColor">@color/colorRallyBlack</item>
+        <item name="android:statusBarColor">@color/colorRallyBlackLight</item>
+    </style>
+
+    <style name="HighContrastDarkOrange" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="android:windowBackground">@color/colorBlack</item>
+        <item name="android:textColorPrimaryInverse">@color/colorBlack</item>
+        <item name="android:colorBackground">@color/colorBlack</item>
+        <item name="android:colorPrimary">@color/colorRallyBlack</item>
+        <item name="android:colorForeground">@color/colorBlack</item>
+
+
         <item name="android:textColorPrimary">@color/colorWhite</item>
-        <item name="android:textColorPrimaryDisableOnly">@color/colorRallyWhite</item>
-        <item name="colorPrimary">@color/colorRallyGreen</item>
-        <item name="colorPrimaryDark">@color/colorRallyDarkGreen</item>
-        <item name="colorError">@color/colorRallyOrange</item>
-        <item name="colorFloat">@color/colorRallyYellow</item>
-        <item name="colorAccent">@color/colorRallyPurple</item>
-        <item name="colorAccentAlt">@color/colorRallyBlue</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+
+        <item name="android:textColorSecondaryInverse">@color/colorRallyWhite</item>
+        <item name="colorPrimaryDark">@color/colorRallyWhite</item>
+
+        <item name="android:navigationBarColor">@color/colorRallyBlack</item>
+        <item name="android:statusBarColor">@color/colorRallyBlackLight</item>
+        <item name="colorAccent">@color/colorRallyOrange</item>
+
     </style>
 
-
-    <style name="HighContrast">
-        <item name="colorBackgroundAlt">@color/colorRallyBlack</item>
-        <item name="colorTextAlt">@color/colorWhite</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryAlt">@color/colorPrimary</item>
-        <item name="colorRallyOrange">@color/colorRallyOrange</item>
-        <item name="colorRallyYellow">@color/colorRallyOrange</item>
-        <item name="colorRallyPurple">@color/colorRallyOrange</item>
-        <item name="colorRallyBlue">@color/colorRallyOrange</item>
+    <style name="HighContrastDarkPurple" parent="HighContrastDarkOrange">
+    <item name="colorAccent">@color/colorRallyPurple</item>
+    </style>
+    <style name="HighContrastLightPurple" parent="HighContrastLightOrange">
+    <item name="colorAccent">@color/colorRallyPurple</item>
     </style>
 
-
+    <style name="HighContrastDarkGreen" parent="HighContrastDarkOrange">
+        <item name="colorAccent">@color/colorRallyGreen</item>
+    </style>
+    <style name="HighContrastLightGreen" parent="HighContrastLightOrange">
+        <item name="colorAccent">@color/colorRallyGreen</item>
+    </style>
 
 </resources>

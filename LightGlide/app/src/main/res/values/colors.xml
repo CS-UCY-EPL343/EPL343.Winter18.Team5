@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#00574b</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorBlack">#000</color>
+    <color name="colorBlack">#000000</color>
     <color name="colorBlackLight">#3c3c3c</color>
-    <color name="colorWhite">#fff</color>
-
-
+    <color name="colorWhite">#ffffff</color>
 
     <!---Rally -->
     <color name="colorRallyBlack">#212121</color>
-    <color name="colorRallyWhite">#fafafa</color>
-    <color name="colorRallyGreen">#1EB980</color>
+    <color name="colorRallyBlackLight">#313131</color>
+    <color name="colorRallyWhite">#e0e0e0</color>
+    <color name="colorRallyGreen">#1eb980</color>
     <color name="colorRallyDarkGreen">#045D56</color>
-    <color name="colorRallyOrange">#FF6859</color>
+    <color name="colorRallyOrange">#ff6859</color>
     <color name="colorRallyYellow">#FFCF44</color>
-    <color name="colorRallyPurple">#B15DFF</color>
+    <color name="colorRallyPurple">#b388ff</color>
     <color name="colorRallyBlue">#72DEFF</color>
+
 </resources>

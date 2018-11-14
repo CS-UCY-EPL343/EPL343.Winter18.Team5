@@ -16,15 +16,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import java.util.Optional;
+
 import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 
 public class Settings extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
-    static int themeID=R.style.AppTheme;
+    int themeID = R.style.HighContrastDarkOrange;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        updateTheme(PreferenceManager.getDefaultSharedPreferences(this));
         super.onCreate(savedInstanceState);
-        LinearLayout root = (LinearLayout)findViewById(android.R.id.list).getParent().getParent().getParent();
+        LinearLayout root = (LinearLayout) findViewById(android.R.id.list).getParent().getParent().getParent();
         Toolbar bar = (Toolbar) LayoutInflater.from(this).inflate(R.layout.settings_toolbar, root, false);
         root.addView(bar, 0); // insert at top
         bar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -33,21 +36,32 @@ public class Settings extends PreferenceActivity implements SharedPreferences.On
                 finish();
             }
         });
-        this.setTheme(themeID);
         addPreferencesFromResource(R.xml.preference);
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
     }
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if(key.equals("theme")) {
-            String aham=sharedPreferences.getString("theme", "AppTheme");
-            if(aham.equals("MyLightTheme"))
-                themeID=R.style.MyLightTheme;
-            else if(aham.equals("MyDarkTheme"))
-                themeID=R.style.MyDarkTheme;
-            else
-                themeID=R.style.AppTheme;
-            this.recreate();
+        switch (key) {
+            case "theme": {
+                updateTheme(sharedPreferences);
+                this.recreate();
+                break;
+            }
         }
     }
+
+    private void updateTheme(SharedPreferences sharedPreferences) {
+        try {
+            String theme = Optional.ofNullable(
+                    sharedPreferences.getString(
+                            "theme", "HighContrastLightOrange"
+                    )).orElse("HighContrastLightOrange");
+            themeID = (int) R.style.class.getDeclaredField(theme).get(0);
+            this.setTheme(themeID);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
