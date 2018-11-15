@@ -8,8 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity"/>
+        android:theme="@style/HighContrastDarkOrange">
+        <activity android:name=".activities.MainActivity" />
 
         <activity
             android:name=".activities.SplashScreen"
@@ -22,24 +22,22 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
         <service android:name=".services.Bus" />
 
-        <activity android:name=".activities.Settings" android:exported="true">
+        <activity
+            android:name=".activities.Settings"
+            android:exported="true"></activity>
 
-        </activity>
-=======
         <activity
             android:name=".History"
             android:label="@string/title_activity_history"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme">
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cy.ac.ucy.cs.epl341.team5.lightglide.activities.MainActivity" />
         </activity>
         <activity android:name=".FlightRecord"></activity>
->>>>>>> master
+
     </application>
 
 </manifest>
