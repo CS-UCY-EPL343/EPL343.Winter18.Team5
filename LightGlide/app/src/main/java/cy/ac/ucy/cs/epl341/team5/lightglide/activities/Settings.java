@@ -22,7 +22,6 @@ import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 
 public class Settings extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     int themeID = R.style.HighContrastDarkOrange;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         updateTheme(PreferenceManager.getDefaultSharedPreferences(this));

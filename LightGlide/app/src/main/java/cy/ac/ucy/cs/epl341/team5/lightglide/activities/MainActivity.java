@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList.setAdapter(mAdapter);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

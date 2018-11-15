@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/HighContrastDarkOrange">
         <activity android:name=".activities.MainActivity" />
-
         <activity
             android:name=".activities.SplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -18,6 +17,7 @@
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -26,8 +26,7 @@
 
         <activity
             android:name=".activities.Settings"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".History"
             android:label="@string/title_activity_history"
@@ -36,8 +35,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cy.ac.ucy.cs.epl341.team5.lightglide.activities.MainActivity" />
         </activity>
-        <activity android:name=".FlightRecord"></activity>
-
+        <activity android:name=".FlightRecord" />
+        <activity android:name=".activities.FlightMode" android:exported="true"></activity>
     </application>
 
 </manifest>
