@@ -3,6 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574b</color>
     <color name="colorAccent">#D81B60</color>
+<<<<<<< HEAD
     <color name="colorBlack">#000000</color>
     <color name="colorBlackLight">#606060</color>
     <color name="colorWhite">#ffffff</color>
@@ -60,4 +61,8 @@
     <color name="clouds"> #ecf0f1</color>
     <color name="paper">#efefef</color>
     <color name="offWhite">#fcfcfc</color>
+=======
+    <color name="colorWhite">@android:color/white</color>
+    <color name="black_overlay">#66000000</color>
+>>>>>>> master
 </resources>
