@@ -30,11 +30,12 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/distanceTextView"
+                    android:id="@+id/dateTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="33dp"
-                    android:autoText="true"
-                    android:text="Distance: 10Km"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="Date: 14.11.2018"
                     android:textSize="16sp" />
 
                 <View
@@ -44,10 +45,12 @@
                     android:background="?android:attr/listDivider" />
 
                 <TextView
-                    android:id="@+id/durationTextView"
+                    android:id="@+id/timestampTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="33dp"
-                    android:text="Duration: 2h"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="From: 13:00 - To: 15:00 "
                     android:textSize="16sp" />
 
                 <View
@@ -57,10 +60,12 @@
                     android:background="?android:attr/listDivider" />
 
                 <TextView
-                    android:id="@+id/dateTextView"
+                    android:id="@+id/distanceTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="33dp"
-                    android:text="14.11.2018"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="Distance: 10Km"
                     android:textSize="16sp" />
 
                 <View
@@ -70,32 +75,110 @@
                     android:background="?android:attr/listDivider" />
 
                 <TextView
-                    android:id="@+id/timestampTextView"
+                    android:id="@+id/durationTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="33dp"
-                    android:text="From: 13:00 - To: 15:00 "
+                    android:gravity="center_vertical"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Duration: 2h"
                     android:textSize="16sp" />
 
-                <View
-                    android:id="@+id/divider4"
+                <Button
+                    android:id="@+id/flightExp"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="?android:attr/listDivider" />
+                    android:layout_height="wrap_content"
+                    android:onClick="Flight_contents"
+                    android:text="Flight Statistics" />
 
-                <TextView
-                    android:id="@+id/expandTextView"
+                <LinearLayout
+                    android:id="@+id/expandableFlightLinearLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="33dp"
-                    android:clickable="true"
-                    android:onClick="toggle_contents"
-                    android:text="Enviroment Statistics"
-                    android:textSize="16sp" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <View
-                    android:id="@+id/divider5"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/velocityView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Velocity" />
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/velocityGraph"
+                            android:layout_width="310dp"
+                            android:layout_height="200dip"
+                            android:layout_marginStart="24dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/elevationView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Elevation" />
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/elevationGraph"
+                            android:layout_width="310dp"
+                            android:layout_height="200dip"
+                            android:layout_marginStart="24dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider12"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/cdRateView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Climb/Descent Rate" />
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/cdRateGraph"
+                            android:layout_width="310dp"
+                            android:layout_height="200dip"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/environmentExp"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="?android:attr/listDivider" />
+                    android:layout_height="wrap_content"
+                    android:onClick="environmentContents"
+                    android:text="Environment Statistics" />
 
                 <LinearLayout
                     android:id="@+id/expandableEnvironmentLinearLayout"
@@ -103,27 +186,125 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/GrapTextView"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="33dp"
-                        android:text="Graph"
-                        android:textSize="16sp" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/temperatureView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Temperature" />
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/temperatureGraph"
+                            android:layout_width="310dp"
+                            android:layout_height="200dip"
+                            android:layout_marginStart="24dp" />
+
+                    </LinearLayout>
 
                     <View
-                        android:id="@+id/divider6"
+                        android:id="@+id/divider8"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/humidityView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Humidity" />
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/humidityGraph"
+                            android:layout_width="310dp"
+                            android:layout_height="200dip"
+                            android:layout_marginStart="24dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider10"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/pressureView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Pressure" />
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/pressureGraph"
+                            android:layout_width="310dp"
+                            android:layout_height="200dip"
+                            android:layout_marginStart="24dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider11"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/uvView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="UV Index" />
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/uvGraph"
+                            android:layout_width="310dp"
+                            android:layout_height="200dip"
+                            android:layout_marginStart="24dp" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
+
+                <View
+                    android:id="@+id/divider13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/listDivider" />
 
             </LinearLayout>
         </ScrollView>
 
+
+
     </LinearLayout>
 
     <View
-        android:id="@+id/divider7"
+        android:id="@+id/divider9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/listDivider" />
