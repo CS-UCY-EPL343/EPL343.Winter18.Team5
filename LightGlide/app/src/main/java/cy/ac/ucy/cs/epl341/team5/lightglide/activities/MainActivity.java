@@ -30,10 +30,12 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList.setAdapter(mAdapter);
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         mDrawerList = (ListView) findViewById(R.id.navList);
 
@@ -105,7 +107,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
-
-
 
 }

@@ -27,7 +27,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".services.Bus" />
+
+        <activity
+            android:name=".History"
+            android:label="@string/title_activity_history"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cy.ac.ucy.cs.epl341.team5.lightglide.activities.MainActivity" />
+        </activity>
+        <activity android:name=".FlightRecord"></activity>
     </application>
 
 </manifest>
