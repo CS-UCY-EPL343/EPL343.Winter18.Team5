@@ -28,6 +28,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cy.ac.ucy.cs.epl341.team5.lightglide.activities.MainActivity" />
         </activity>
+        <activity android:name=".FlightRecord"></activity>
     </application>
 
 </manifest>

@@ -1,16 +1,20 @@
 package cy.ac.ucy.cs.epl341.team5.lightglide;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import cy.ac.ucy.cs.epl341.team5.lightglide.db.model.Flight;
@@ -24,7 +28,8 @@ public class History extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("History");
         setSupportActionBar(toolbar);
         flightList = (ListView) findViewById(R.id.flightList);
 
@@ -35,6 +40,14 @@ public class History extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter();
         flightList.setAdapter(customAdapter);
 
+        flightList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                Intent intent = new Intent(getApplicationContext(), FlightRecord.class);
+                intent.putExtra("name", flights.get(i).getName());
+                startActivity(intent);
+            }
+        });
 
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -75,7 +88,8 @@ public class History extends AppCompatActivity {
             TextView textViewT = view.findViewById(R.id.textViewT);
 
             textViewN.setText(flights.get(i).getName());
-            textViewT.setText(flights.get(i).getStart().toString());
+            Date date = new Date(flights.get(i).getStart().getTime() * 1000);
+            textViewT.setText(new SimpleDateFormat("dd.MM.yyyy").format(date));
 
             return view;
         }
