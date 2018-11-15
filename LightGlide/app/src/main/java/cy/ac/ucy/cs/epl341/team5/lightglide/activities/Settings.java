@@ -1,5 +1,7 @@
 package cy.ac.ucy.cs.epl341.team5.lightglide.activities;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.preference.PreferenceActivity;
@@ -22,7 +24,7 @@ import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 
 public class Settings extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     int themeID = R.style.HighContrastDarkOrange;
-
+    boolean flag=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         updateTheme(PreferenceManager.getDefaultSharedPreferences(this));
@@ -33,6 +35,10 @@ public class Settings extends PreferenceActivity implements SharedPreferences.On
         bar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("ThemeChange", flag);
+                flag=false;
+                setResult(Activity.RESULT_OK, resultIntent);
                 finish();
             }
         });
@@ -45,6 +51,7 @@ public class Settings extends PreferenceActivity implements SharedPreferences.On
         switch (key) {
             case "theme": {
                 updateTheme(sharedPreferences);
+                flag=true;
                 this.recreate();
                 break;
             }
