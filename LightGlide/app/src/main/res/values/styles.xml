@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="colorFAB" format="reference"/>
+    <attr name="colorHighlight" format="reference"/>
 
     <!-- Base application theme. -->
     <style name="HighContrastLightOrange" parent="Theme.AppCompat.Light.NoActionBar">
