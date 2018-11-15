@@ -35,7 +35,7 @@ abstract class AppDatabase : RoomDatabase() {
                 if (optdb.isPresent) return optdb.get()
                 else {
                     if(params.size>0 && params[0]!=null){
-                        getDB(params[0]!!)
+                        return getDB(params[0]!!)
                     }
                     else{
                         return null;
