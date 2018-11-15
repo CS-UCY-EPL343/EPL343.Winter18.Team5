@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="194dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Flight 00-01"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/drawer_layout" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
@@ -62,31 +73,6 @@
 
     </android.support.design.widget.TabLayout>
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="352dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="166dp"
-        android:elevation="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/tabLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView0"
-            android:layout_width="359dp"
-            android:layout_height="46dp"
-            android:text="Flight Name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            tools:layout_editor_absoluteX="12dp"
-            tools:layout_editor_absoluteY="16dp" />
-
-    </FrameLayout>
-
 
     <!--android:onClick="startFlightMode"-->
 
@@ -95,12 +81,11 @@
         android:layout_width="105dp"
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:text="30/10/2018"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <!--<android.support.design.widget.BottomNavigationView-->
     <!--android:id="@+id/navigation"-->
