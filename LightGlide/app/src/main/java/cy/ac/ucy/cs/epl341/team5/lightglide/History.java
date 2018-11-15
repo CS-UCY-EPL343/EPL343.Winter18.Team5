@@ -3,7 +3,6 @@ package cy.ac.ucy.cs.epl341.team5.lightglide;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,16 +20,15 @@ import cy.ac.ucy.cs.epl341.team5.lightglide.db.model.Flight;
 
 public class History extends AppCompatActivity {
 
-    private ArrayList<Flight> flights = new ArrayList<Flight>();
+    private ArrayList<Flight> flights = new ArrayList<>();
     private ListView flightList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("History");
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        toolbar.setTitle("History");
         flightList = (ListView) findViewById(R.id.flightList);
 
         Flight f = new Flight(0, "wanLink", new Timestamp(0L), 50, 590.34, new Timestamp(1L), 87 );
@@ -44,16 +42,17 @@ public class History extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                 Intent intent = new Intent(getApplicationContext(), FlightRecord.class);
-                intent.putExtra("name", flights.get(i).getName());
+                intent.putExtra("flightID", flights.get(i).getId());
                 startActivity(intent);
             }
         });
 
-        if(getSupportActionBar() != null){
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
+//        if(getSupportActionBar() != null){
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//            getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("History");
     }
 
     @Override
