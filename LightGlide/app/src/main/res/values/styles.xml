@@ -4,7 +4,7 @@
     <attr name="colorHighlight" format="reference"/>
 
     <!-- Base application theme. -->
-    <style name="HighContrastLightOrange" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="HighContrastLightOrange" parent="Theme.AppCompat">
         <item name="android:colorAccent">@color/colorRallyOrange</item>
         <item name="colorAccent">@color/colorRallyOrange</item>
         <item name="colorPrimary">@color/orange</item>
@@ -15,7 +15,7 @@
         <item name="colorError">@color/alizarin</item>
     </style>
 
-    <style name="HighContrastDarkOrange" parent="Theme.AppCompat.NoActionBar">
+    <style name="HighContrastDarkOrange" parent="Theme.AppCompat">
         <item name="android:colorAccent">@color/colorRallyOrange</item>
         <item name="colorAccent">@color/colorRallyOrange</item>
         <item name="colorPrimary">@color/orange</item>
