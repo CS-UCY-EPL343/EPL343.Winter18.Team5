@@ -12,16 +12,22 @@
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <service android:name=".services.Bus" />
 
         <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"></activity>
+            android:name=".activities.SplashScreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".services.Bus" />
     </application>
 
 </manifest>
