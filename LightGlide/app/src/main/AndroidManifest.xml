@@ -29,14 +29,14 @@
             android:exported="true"></activity>
 
         <activity
-            android:name=".History"
+            android:name=".activities.History"
             android:label="@string/title_activity_history"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cy.ac.ucy.cs.epl341.team5.lightglide.activities.MainActivity" />
         </activity>
-        <activity android:name=".FlightRecord"></activity>
+        <activity android:name=".activities.FlightRecord"></activity>
         <activity
             android:name=".activities.About"
             android:exported="true"></activity>

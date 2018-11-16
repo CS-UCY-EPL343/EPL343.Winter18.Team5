@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_last_flight"
+        android:icon="@drawable/ic_flight_land_black_24dp"
+        android:title="@string/title_last_flight" />
+
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_poll_black_24dp"
+        android:title="@string/title_activity_history" />
+
+    <item
+        android:id="@+id/navigation_about"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/title_about"/>
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/title_activity_settings"/>
+
+</menu>

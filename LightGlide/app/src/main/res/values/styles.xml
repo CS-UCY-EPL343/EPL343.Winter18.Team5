@@ -4,7 +4,7 @@
     <attr name="colorHighlight" format="reference"/>
 
     <!-- Base application theme. -->
-    <style name="HighContrastLightOrange" parent="Theme.AppCompat">
+    <style name="HighContrastLightOrange" parent="Theme.AppCompat.Light">
         <item name="android:colorAccent">@color/colorRallyOrange</item>
         <item name="colorAccent">@color/colorRallyOrange</item>
         <item name="colorPrimary">@color/orange</item>

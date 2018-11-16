@@ -1,8 +1,7 @@
-package cy.ac.ucy.cs.epl341.team5.lightglide;
+package cy.ac.ucy.cs.epl341.team5.lightglide.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,25 +15,35 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 import cy.ac.ucy.cs.epl341.team5.lightglide.db.model.Flight;
 
-public class History extends AppCompatActivity {
+public class History extends ParentActivity {
 
     private ArrayList<Flight> flights = new ArrayList<>();
     private ListView flightList;
 
     @Override
+    public String provideTitle(Intent ignored) {
+        return getString(R.string.title_activity_history);
+    }
+
+    @Override
+    public int provideLayout() {
+        return R.layout.activity_history;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        toolbar.setTitle("History");
-        flightList = (ListView) findViewById(R.id.flightList);
+
+        flightList = findViewById(R.id.flightList);
 
         Flight f = new Flight(0, "wanLink", new Timestamp(0L), 50, 590.34, new Timestamp(1L), 87 );
         for (int i=0; i<20; i++){
             flights.add(f);
         }
+
         CustomAdapter customAdapter = new CustomAdapter();
         flightList.setAdapter(customAdapter);
 
@@ -46,13 +55,6 @@ public class History extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-//        if(getSupportActionBar() != null){
-//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//            getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        }
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("History");
     }
 
     @Override

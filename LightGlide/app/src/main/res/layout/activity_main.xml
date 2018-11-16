@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="194dp"
@@ -28,20 +29,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <android.support.v4.widget.DrawerLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ListView
-            android:id="@+id/navList"
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="left|start"
-            android:background="#ffeeeeee"/>
-    </android.support.v4.widget.DrawerLayout>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout2"
@@ -206,5 +193,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    <include layout="@layout/nav_drawer_base"/>
 
 </android.support.constraint.ConstraintLayout>

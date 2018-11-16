@@ -1,8 +1,7 @@
-package cy.ac.ucy.cs.epl341.team5.lightglide;
+package cy.ac.ucy.cs.epl341.team5.lightglide.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,26 +9,31 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-public class FlightRecord extends AppCompatActivity {
+import cy.ac.ucy.cs.epl341.team5.lightglide.R;
+
+public class FlightRecord extends ParentActivity {
 
     LinearLayout expandableEnvironmentLinearLayout;
     LinearLayout expandableFlightLinearLayout;
+
+    @Override
+    public String provideTitle(Intent intent) {
+        int receivedFlightID = intent.getExtras()!=null?intent.getExtras().getInt("flightID",0):0;
+        return "<INSERT RECEIVED FLIGHT ID>";
+    }
+
+    @Override
+    public int provideLayout() {
+        return R.layout.activity_flight_record;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flight_record);
-
-        Intent intent = getIntent();
-        int receivedFlightID = (int) intent.getExtras().get("flightID");
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("WanLink");//receivedFlight.getName());
         expandableEnvironmentLinearLayout = findViewById(R.id.expandableEnvironmentLinearLayout);
         expandableEnvironmentLinearLayout.setVisibility(View.GONE);
         expandableFlightLinearLayout = findViewById(R.id.expandableFlightLinearLayout);
         expandableFlightLinearLayout.setVisibility(View.GONE);
-//        AppDatabase db = AppDatabase.Companion.getDB(this);
     }
 
     @Override
@@ -43,14 +47,10 @@ public class FlightRecord extends AppCompatActivity {
                 expandableEnvironmentLinearLayout.isShown() ? View.GONE : View.VISIBLE);
 
         ScrollView scrollview = findViewById(R.id.scrol);
-        scrollview.post(new Runnable(){
-
-            @Override
-            public void run() {
-                Button env =findViewById(R.id.environmentExp);
-                int env_Pos = env.getTop();
-                scrollview.scrollTo(0,env_Pos);
-            }
+        scrollview.post(() -> {
+            Button env =findViewById(R.id.environmentExp);
+            int env_Pos = env.getTop();
+            scrollview.scrollTo(0,env_Pos);
         });
     }
 
@@ -59,14 +59,11 @@ public class FlightRecord extends AppCompatActivity {
                 expandableFlightLinearLayout.isShown() ? View.GONE : View.VISIBLE);
 
         ScrollView scrollview = findViewById(R.id.scrol);
-        scrollview.post(new Runnable(){
-
-            @Override
-            public void run() {
-                Button env =findViewById(R.id.flightExp);
-                int env_Pos = env.getTop();
-                scrollview.scrollTo(0,env_Pos);
-            }
+        scrollview.post(
+                () -> {
+            Button env =findViewById(R.id.flightExp);
+            int env_Pos = env.getTop();
+            scrollview.scrollTo(0,env_Pos);
         });
     }
 
