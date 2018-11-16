@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.LayoutInflater;
+import android.widget.LinearLayout;
 
 import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 
@@ -18,10 +20,15 @@ public class Settings extends AppCompatPreferenceActivity implements SharedPrefe
         call = getIntent();
         addPreferencesFromResource(R.xml.preference);
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeButtonEnabled(true);
-        }
+        LinearLayout root = (LinearLayout)findViewById(android.R.id.list).getParent().getParent().getParent();
+        LinearLayout bar = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.layout_toolbar, root, false);
+        android.support.v7.widget.Toolbar actionBar = bar.findViewById(R.id.toolbar);
+        root.addView(bar, 0); // insert at top
+
+        setSupportActionBar(actionBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
     }
 
     @Override
@@ -51,7 +58,6 @@ public class Settings extends AppCompatPreferenceActivity implements SharedPrefe
         setResult(changed?0:1,  call);
         super.finish();
     }
-
 
 }
 
