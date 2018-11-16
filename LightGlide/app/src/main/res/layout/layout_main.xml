@@ -43,7 +43,8 @@
             </android.support.constraint.ConstraintLayout>
         </FrameLayout>
 
-        <include layout="@layout/layout_drawer"/>
+        <include layout="@id/drawer_layout"/>
+
 
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>

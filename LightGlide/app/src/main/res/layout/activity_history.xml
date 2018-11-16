@@ -1,37 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".History">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+       android:layout_height="match_parent"
+        android:orientation="vertical"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-        </android.support.design.widget.AppBarLayout>
-
-        <ScrollView
-            android:id="@+id/scrol"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="519dp"
+            android:layout_height="match_parent"
             android:clipToPadding="true"
             android:fillViewport="true">
 
-            <ListView
-                android:id="@+id/flightList"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:foregroundGravity="center_vertical"
-                android:textAlignment="center" />
-        </ScrollView>
+                android:layout_height="match_parent"
+                tools:context=".activities.MainActivity">
 
-    </LinearLayout>
+                <!-- Activity Layout Start -->
+                <!--_______________________________________________-->
 
-</android.support.design.widget.CoordinatorLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </android.support.design.widget.AppBarLayout>
+
+                    <ScrollView
+                        android:id="@+id/scrol"
+                        android:layout_width="match_parent"
+                        android:layout_height="519dp"
+                        android:clipToPadding="true"
+                        android:fillViewport="true">
+
+                        <ListView
+                            android:id="@+id/flightList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foregroundGravity="center_vertical"
+                            android:textAlignment="center" />
+                    </ScrollView>
+
+                </LinearLayout>
+
+                <!--_______________________________________________-->
+                <!--Activity Layout End-->
+            </android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+
+        <include layout="@layout/layout_drawer"/>
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
