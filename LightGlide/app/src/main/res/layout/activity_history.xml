@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-
-       android:layout_height="match_parent"
-        android:orientation="vertical"/>
+    <include layout="@layout/layout_toolbar" />
 
     <View
         android:layout_width="fill_parent"
@@ -31,24 +25,12 @@
             android:clipToPadding="true"
             android:fillViewport="true">
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".activities.MainActivity">
-
-                <!-- Activity Layout Start -->
-                <!--_______________________________________________-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <android.support.design.widget.AppBarLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    </android.support.design.widget.AppBarLayout>
 
                     <ScrollView
                         android:id="@+id/scrol"
@@ -60,16 +42,11 @@
                         <ListView
                             android:id="@+id/flightList"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:foregroundGravity="center_vertical"
-                            android:textAlignment="center" />
+                            android:layout_height="wrap_content" />
                     </ScrollView>
 
                 </LinearLayout>
 
-                <!--_______________________________________________-->
-                <!--Activity Layout End-->
-            </android.support.constraint.ConstraintLayout>
         </FrameLayout>
 
         <include layout="@layout/layout_drawer"/>
