@@ -1,8 +1,10 @@
-package cy.ac.ucy.cs.epl341.team5.lightglide;
+package cy.ac.ucy.cs.epl341.team5.lightglide.activities;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,27 +17,54 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
+import cy.ac.ucy.cs.epl341.team5.lightglide.R;
+import cy.ac.ucy.cs.epl341.team5.lightglide.db.model.AppDatabase;
 import cy.ac.ucy.cs.epl341.team5.lightglide.db.model.Flight;
 
-public class History extends AppCompatActivity {
+public class History extends ParentActivity {
 
     private ArrayList<Flight> flights = new ArrayList<>();
     private ListView flightList;
 
+    private CustomAdapter customAdapter;
+    private final int reqCode = 0;
+    private final int renameFlag = 1;
+    private final int deleteFlag = -1;
+
+    @Override
+    public String provideTitle(Intent ignored) {
+        return getString(R.string.title_activity_history);
+    }
+
+    @Override
+    protected boolean handleMenu(MenuItem item) {
+        return true;
+    }
+
+    @Override
+    public int provideLayout() {
+        return R.layout.activity_history;
+    }
+
+    @Override
+    protected int optionsMenu() {
+        return NOT_APPLICABLE;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        toolbar.setTitle("History");
-        flightList = (ListView) findViewById(R.id.flightList);
+
+        flightList = findViewById(R.id.flightList);
 
         Flight f = new Flight(0, "wanLink", new Timestamp(0L), 50, 590.34, new Timestamp(1L), 87 );
-        for (int i=0; i<20; i++){
+        for (int i=0; i<5; i++){
             flights.add(f);
         }
-        CustomAdapter customAdapter = new CustomAdapter();
+
+        customAdapter = new CustomAdapter();
         flightList.setAdapter(customAdapter);
 
         flightList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -43,23 +72,30 @@ public class History extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                 Intent intent = new Intent(getApplicationContext(), FlightRecord.class);
                 intent.putExtra("flightID", flights.get(i).getId());
-                startActivity(intent);
+                startActivityForResult(intent, reqCode);
             }
         });
 
-//        if(getSupportActionBar() != null){
-//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//            getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        }
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("History");
+        Log.d("DB:>",AppDatabase.Companion.getDB(this)==null?"DBNULL":"NOT NULL");
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == android.R.id.home)
-            finish();
-        return super.onOptionsItemSelected(item);
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode == deleteFlag){
+            int id = data.getExtras().getInt("id");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                flights = flights.stream().filter((flight -> flight.getId()!=id)).collect(Collectors.toCollection(ArrayList::new));
+
+            }else {
+                int index = 0;
+                for (; flights.get(index).getId() != id; index++) ;
+                flights.remove(index);
+            }
+        }
+        else if (resultCode == renameFlag)
+
+        customAdapter = new CustomAdapter();
+        flightList.setAdapter(customAdapter);
     }
 
     class CustomAdapter extends BaseAdapter {

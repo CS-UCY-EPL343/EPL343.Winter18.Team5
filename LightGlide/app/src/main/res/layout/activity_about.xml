@@ -1,22 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.About">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorAccent" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:gravity="center_horizontal"
-        >
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit erat vitae orci vehicula, id tincidunt elit tempor. Vivamus at finibus libero. Cras quis est diam. Sed suscipit vitae ante vitae sagittis. Ut ultricies odio interdum egestas feugiat. Fusce lectus purus, vestibulum consectetur metus in, consectetur rutrum mauris. Mauris tincidunt, urna vitae convallis bibendum, urna dolor dictum ante, quis placerat justo dolor quis dui. Quisque eu lectus sed lectus iaculis feugiat in aliquam orci. Morbi sit amet tincidunt turpis, at aliquet urna. Proin consequat justo vitae ullamcorper suscipit. Mauris molestie enim non mattis accumsan. Vivamus at fringilla metus, id condimentum tortor. Pellentesque metus felis, luctus ac gravida id, pulvinar ut felis. "/>
-    </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activities.MainActivity">
+
+                <!-- Activity Layout Start -->
+                <!--_______________________________________________-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/str_about"
+                    />
+
+                <!--_______________________________________________-->
+                <!--Activity Layout End-->
+            </android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+
+        <include layout="@layout/layout_drawer"/>
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

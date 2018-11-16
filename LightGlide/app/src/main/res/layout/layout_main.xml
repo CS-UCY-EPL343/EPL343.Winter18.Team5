@@ -9,9 +9,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-
-       android:layout_height="match_parent"
-        android:orientation="vertical"/>
+        android:layout_height="?attr/actionBarSize" />
 
     <View
         android:layout_width="fill_parent"
@@ -27,9 +25,8 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="true"
-            android:fillViewport="true">
+            android:layout_height="match_parent">
+
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -39,33 +36,7 @@
                 <!-- Activity Layout Start -->
                 <!--_______________________________________________-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
-                    <android.support.design.widget.AppBarLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    </android.support.design.widget.AppBarLayout>
-
-                    <ScrollView
-                        android:id="@+id/scrol"
-                        android:layout_width="match_parent"
-                        android:layout_height="519dp"
-                        android:clipToPadding="true"
-                        android:fillViewport="true">
-
-                        <ListView
-                            android:id="@+id/flightList"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:foregroundGravity="center_vertical"
-                            android:textAlignment="center" />
-                    </ScrollView>
-
-                </LinearLayout>
 
                 <!--_______________________________________________-->
                 <!--Activity Layout End-->
@@ -73,6 +44,7 @@
         </FrameLayout>
 
         <include layout="@id/drawer_layout"/>
+
 
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>
