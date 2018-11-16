@@ -18,11 +18,10 @@ public class Settings extends AppCompatPreferenceActivity implements SharedPrefe
         call = getIntent();
         addPreferencesFromResource(R.xml.preference);
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
-        setSupportActionBar(findViewById(R.id.toolbar));
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Settings");
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
     }
 
     @Override
@@ -52,4 +51,7 @@ public class Settings extends AppCompatPreferenceActivity implements SharedPrefe
         setResult(changed?0:1,  call);
         super.finish();
     }
+
+
 }
+
