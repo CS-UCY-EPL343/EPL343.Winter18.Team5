@@ -60,7 +60,8 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".activities.PopDelete"></activity>
+        <activity android:name=".activities.PopDelete"
+                    android:theme="@style/PopWindowTheme"></activity>
     </application>
 
 </manifest>

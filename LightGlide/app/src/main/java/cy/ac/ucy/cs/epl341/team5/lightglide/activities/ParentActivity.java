@@ -31,7 +31,7 @@ public abstract class ParentActivity extends AppCompatActivity implements Naviga
     protected abstract int optionsMenu();
 
     protected boolean usesHamburder;
-
+    protected boolean usesActionbar=true;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (optionsMenu() != NOT_APPLICABLE)
@@ -54,8 +54,11 @@ public abstract class ParentActivity extends AppCompatActivity implements Naviga
 
         if (provideLayout() == NOT_APPLICABLE)
             return;
+
         setLayout(provideLayout());
 
+        if(!usesActionbar)
+            return;
         setSupportActionBar(findViewById(R.id.toolbar));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
