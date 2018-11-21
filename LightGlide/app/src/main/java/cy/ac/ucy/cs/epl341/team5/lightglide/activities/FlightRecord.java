@@ -1,7 +1,9 @@
 package cy.ac.ucy.cs.epl341.team5.lightglide.activities;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,8 @@ import android.widget.TextView;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 import cy.ac.ucy.cs.epl341.team5.lightglide.db.model.Flight;
@@ -21,6 +25,9 @@ public class FlightRecord extends ParentActivity {
     Flight flight;
     LinearLayout expandableEnvironmentLinearLayout;
     LinearLayout expandableFlightLinearLayout;
+    private final int reqCode = 0;
+    private final int cancelFlag = -1;
+    private final int deleteFlag = 1;
 
     @Override
     public String provideTitle(Intent intent) {
@@ -36,15 +43,11 @@ public class FlightRecord extends ParentActivity {
             int id = flight.getId();
             intent.putExtra("id",id);
             setResult(1, intent);
-            //finish();
         }
         else if (item.getItemId() == (R.id.deleteButton)){
-            Intent intent = new Intent();
-            int id = flight.getId();
-            intent.putExtra("id",id);
-            setResult(-1, intent);
-            finish();
-            }
+            Intent intent = new Intent(this, PopDelete.class);
+            startActivityForResult(intent, reqCode);
+        }
         return true;
     }
 
@@ -116,4 +119,19 @@ public class FlightRecord extends ParentActivity {
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        if (reqCode == deleteFlag){
+            int id = flight.getId();
+            Intent intent = new Intent();
+            intent.putExtra("id",id);
+            setResult(-1, intent);
+            finish();
+        }
+        else {
+            setResult(0);
+        }
     }
+
+}

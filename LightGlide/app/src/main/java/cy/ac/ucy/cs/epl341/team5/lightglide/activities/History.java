@@ -104,7 +104,9 @@ public class History extends ParentActivity {
                 flights.remove(index);
             }
         }
-        else if (resultCode == renameFlag)
+        else if (resultCode == renameFlag){
+
+        }
 
         customAdapter = new CustomAdapter();
         flightList.setAdapter(customAdapter);
