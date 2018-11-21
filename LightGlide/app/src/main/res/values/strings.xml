@@ -83,5 +83,6 @@
     <string name="title_activity_splash_screen">@string/app_name</string>
     <string name="title_about">About</string>
     <string name="str_about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit erat vitae orci vehicula, id tincidunt elit tempor. Vivamus at finibus libero. Cras quis est diam. Sed suscipit vitae ante vitae sagittis. Ut ultricies odio interdum egestas feugiat. Fusce lectus purus, vestibulum consectetur metus in, consectetur rutrum mauris. Mauris tincidunt, urna vitae convallis bibendum, urna dolor dictum ante, quis placerat justo dolor quis dui. Quisque eu lectus sed lectus iaculis feugiat in aliquam orci. Morbi sit amet tincidunt turpis, at aliquet urna. Proin consequat justo vitae ullamcorper suscipit. Mauris molestie enim non mattis accumsan. Vivamus at fringilla metus, id condimentum tortor. Pellentesque metus felis, luctus ac gravida id, pulvinar ut felis.</string>
+    <string name="flightNum">50</string>
 
 </resources>

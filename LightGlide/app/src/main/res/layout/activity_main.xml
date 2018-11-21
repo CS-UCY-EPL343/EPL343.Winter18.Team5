@@ -4,10 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_toolbar"/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        app:tabGravity="fill"/>
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -19,9 +33,54 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activities.MainActivity">
+
+                <!-- Activity Layout Start -->
+                <!--_______________________________________________-->
+                <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="370dp" />
+
+                    <fragment
+                        android:id="@+id/g_map"
+                        class="com.google.android.gms.maps.SupportMapFragment"
+                        android:name="cy.ac.ucy.cs.epl341.team5.lightglide.activities.MainActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_anchorGravity="center_horizontal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginTop="350dp"
+                        app:layout_constraintTop_toBottomOf="@+id/viewpager" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:src="@drawable/ic_add_white_24dp"
+                        android:layout_margin="16dp" />
+
+                </android.support.design.widget.CoordinatorLayout>
+
+
+                <!--_______________________________________________-->
+                <!--Activity Layout End-->
+            </android.support.constraint.ConstraintLayout>
         </FrameLayout>
 
         <include layout="@layout/layout_drawer"/>
+
 
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>
