@@ -17,6 +17,7 @@ import android.widget.Button;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.jjoe64.graphview.GraphView;
@@ -56,9 +57,10 @@ public class MainActivity extends ParentActivity implements OnMapReadyCallback {
                 startActivity(new Intent(MainActivity.this,FlightMode.class));
             }
         });
-//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-//                .findFragmentById(R.id.g_map);
-//        mapFragment.getMapAsync(this);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.g_map);
+        mapFragment.getMapAsync(this);
+
     }
 
     private void setupViewPager(ViewPager viewPager) {

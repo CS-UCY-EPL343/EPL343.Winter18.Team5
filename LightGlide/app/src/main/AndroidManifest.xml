@@ -12,6 +12,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
+
             android:value="AIzaSyDu3Tnn0WTTFBb0MUBZkjz-F1qFBjMG288"/>
         <activity android:name=".activities.MainActivity" android:exported="true"/>
         <meta-data
@@ -20,15 +21,17 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+            android:value="AIzaSyDu3Tnn0WTTFBb0MUBZkjz-F1qFBjMG288" />
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true" />
+
         <activity
             android:name=".activities.SplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_splash_screen"
             android:theme="@style/SplashTheme">
-
-
-
-
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,11 +61,16 @@
         <activity
             android:name=".activities.About"
             android:exported="true" />
+        <activity
+            android:name=".activities.PopRename"
+            android:theme="@style/PopWindowTheme"></activity>
 
-        <activity android:name=".activities.PopRename"
-            android:theme="@style/PopWindowTheme">
-        </activity>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
+        <activity android:name=".activities.PopDelete"
+                    android:theme="@style/PopWindowTheme"></activity>
     </application>
 
 </manifest>

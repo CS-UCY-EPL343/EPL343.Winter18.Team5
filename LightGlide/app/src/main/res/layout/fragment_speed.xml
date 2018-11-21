@@ -10,13 +10,13 @@
         android:layout_height="200dp"
         app:seriesData="0=0;1=6;2=5;4=8"
         app:seriesType="line"
-        app:seriesColor="#FF4081"
+        app:seriesColor="@color/colorAccent"
         app:seriesTitle="Speed"
-        android:title="Speed Graph"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="16dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:id="@+id/elevation_graph"/>
+    <!--android:title="Speed Graph"-->
 
 
 
