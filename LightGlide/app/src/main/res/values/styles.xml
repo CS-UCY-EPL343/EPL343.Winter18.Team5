@@ -20,6 +20,9 @@
         <item name="themeColorFAB">@color/river</item>
         <item name="themeColorError">@color/alizarin</item>
 
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+
     </style>
 
     <style name="HighContrastDarkOrange" parent="Theme.AppCompat.NoActionBar">
@@ -31,6 +34,9 @@
         <item name="themeColorHighlight">@color/pink</item>
         <item name="themeColorFAB">@color/river</item>
         <item name="themeColorError">@color/alizarin</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
 
     <style name="HighContrastDarkPurple" parent="HighContrastDarkOrange">
@@ -65,5 +71,6 @@
     <style name="PopWindowTheme">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
+
     </style>
 </resources>

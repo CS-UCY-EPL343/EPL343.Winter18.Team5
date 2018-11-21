@@ -9,7 +9,7 @@ import android.view.View;
 
 import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 
-public class PopRename extends ParentActivity {
+public class PopDelete extends ParentActivity {
 
     @Override
     protected String provideTitle(Intent intent) {
@@ -23,7 +23,7 @@ public class PopRename extends ParentActivity {
 
     @Override
     protected int provideLayout() {
-        return R.layout.activity_pop_rename;
+        return R.layout.activity_pop_delete;
     }
 
     @Override
@@ -38,12 +38,18 @@ public class PopRename extends ParentActivity {
         //setContentView(R.layout.activity_pop_rename);
         //getActionBar().hide();
 
+
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         getWindow().setLayout((int)(dm.widthPixels*0.75),(int)(dm.heightPixels*0.16));
     }
 
-    public void onClickCancelRename(View v){
+    public void onClickOk(View v){
+        setResult(1);
+        finish();
+    }
+
+    public void onClickCancel(View v){
         setResult(-1);
         finish();
     }
