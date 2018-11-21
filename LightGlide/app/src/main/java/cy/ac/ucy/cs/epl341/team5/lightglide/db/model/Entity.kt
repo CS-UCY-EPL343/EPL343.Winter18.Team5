@@ -80,3 +80,10 @@ data class Acceleration(
         @ColumnInfo(name = "ay") val y: Double,
         @ColumnInfo(name = "az") val z: Double
 )
+
+
+data class NamedAndTimedFlight(
+        val name:String,
+        val id:Int,
+        val start: Timestamp
+)

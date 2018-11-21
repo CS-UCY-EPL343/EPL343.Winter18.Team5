@@ -25,15 +25,15 @@
     <color name="green"> #4caf50</color>
     <color name="lightGreen"> #8bc34a</color>
     <color name="lime"> #cddc39</color>
-    <color name="river"> #3498db</color>
+    <color name="river">#3498db</color>
     <color name="belize"> #2980b9</color>
     <color name="asphalt"> #34495e</color>
-    <color name="midnightBlue"> #2c3e50</color>
+    <color name="midnightBlue">#2c3e50</color>
     <color name="blue"> #2196f3</color>
     <color name="lightBlue"> #03a9f4</color>
     <color name="cyan"> #00bcd4</color>
     <color name="teal"> #009688</color>
-    <color name="alizarin"> #e74c3c</color>
+    <color name="alizarin">#e74c3c</color>
     <color name="pomegranate"> #c0392b</color>
     <color name="red"> #f44336</color>
     <color name="carrot"> #e67e22</color>
@@ -54,7 +54,7 @@
     <color name="grey"> #9e9e9e</color>
     <color name="gunMetal"> #607d8b</color>
     <color name="asbestos"> #7f8c8d</color>
-    <color name="concrete"> #95a5a6</color>
+    <color name="concrete">#95a5a6</color>
     <color name="silver"> #bdc3c7</color>
     <color name="clouds"> #ecf0f1</color>
     <color name="paper">#efefef</color>

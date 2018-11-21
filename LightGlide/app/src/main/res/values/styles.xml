@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="colorFAB" format="reference"/>
-    <attr name="colorHighlight" format="reference"/>
+    <attr name="themeColorFAB" format="reference" />
+    <attr name="themeColorHighlight" format="reference" />
+    <attr name="themeColorError" format="reference"/>
+    <attr name="themeColorAccent" format="reference" />
+    <attr name="themeColorForeground" format="reference" />
+    <attr name="themeColorBackground" format="reference" />
+    <attr name="themeColorPrimary" format="reference" />
+    <attr name="themeColorPrimaryDark" format="reference" />
 
     <!-- Base application theme. -->
-    <style name="HighContrastLightOrange" parent="Theme.AppCompat">
+    <style name="HighContrastLightOrange" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:colorAccent">@color/colorRallyOrange</item>
         <item name="colorAccent">@color/colorRallyOrange</item>
         <item name="colorPrimary">@color/orange</item>
         <item name="android:colorSecondary">@color/deepOrange</item>
 
-        <item name="colorHighlight">@color/pink</item>
-        <item name="colorFAB">@color/river</item>
-        <item name="colorError">@color/alizarin</item>
+        <item name="themeColorHighlight">@color/pink</item>
+        <item name="themeColorFAB">@color/river</item>
+        <item name="themeColorError">@color/alizarin</item>
+
     </style>
 
-    <style name="HighContrastDarkOrange" parent="Theme.AppCompat">
+    <style name="HighContrastDarkOrange" parent="Theme.AppCompat.NoActionBar">
         <item name="android:colorAccent">@color/colorRallyOrange</item>
         <item name="colorAccent">@color/colorRallyOrange</item>
         <item name="colorPrimary">@color/orange</item>
         <item name="android:colorSecondary">@color/deepOrange</item>
 
-        <item name="colorHighlight">@color/pink</item>
-        <item name="colorFAB">@color/river</item>
-        <item name="colorError">@color/alizarin</item>
+        <item name="themeColorHighlight">@color/pink</item>
+        <item name="themeColorFAB">@color/river</item>
+        <item name="themeColorError">@color/alizarin</item>
     </style>
 
     <style name="HighContrastDarkPurple" parent="HighContrastDarkOrange">
@@ -55,5 +62,8 @@
 
     </style>
 
-
+    <style name="PopWindowTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
 </resources>

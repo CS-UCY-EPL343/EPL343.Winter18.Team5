@@ -6,7 +6,6 @@ import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.TypeConverters
 import android.content.Context
 import android.os.AsyncTask
-import java.util.*
 
 // File: AppDatabase.java
 @Database(entities = arrayOf(EnvironmentMetrics::class, FlightPoint::class, Flight::class), version = 1)
@@ -17,22 +16,21 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun flightDao(): FlightDao
 
     companion object {
-        private var optdb: Optional<AppDatabase> = Optional.ofNullable(null)
-        fun getDB(context: Context): AppDatabase {
-            optdb = if (optdb.isPresent) optdb
-            else Optional.of(
+        private var optdb: AppDatabase? = null;
+        fun getDB(context: Context): AppDatabase? {
+            optdb = if (optdb==null) optdb
+            else
                     Room.databaseBuilder(
                             context,
                             AppDatabase::class.java,
                             "lightglide")
                             .build()
-            )
-            return optdb.get()
+            return optdb
         }
 
         class DBInitializerTask: AsyncTask<Context, Int, AppDatabase>() {
             override fun doInBackground(vararg params: Context?): AppDatabase? {
-                if (optdb.isPresent) return optdb.get()
+                if (optdb!=null) return optdb
                 else {
                     if(params.size>0 && params[0]!=null){
                         return getDB(params[0]!!)

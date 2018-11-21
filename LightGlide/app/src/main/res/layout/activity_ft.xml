@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activities.MainActivity">
+
+                <!-- Activity Layout Start -->
+                <!--_______________________________________________-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </android.support.design.widget.AppBarLayout>
+
+                    <ScrollView
+                        android:id="@+id/scrol"
+                        android:layout_width="match_parent"
+                        android:layout_height="519dp"
+                        android:clipToPadding="true"
+                        android:fillViewport="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/dateTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="16dp"
+                                android:gravity="center_vertical"
+                                android:text="Date: 14.11.2018"
+                                android:textSize="16sp" />
+
+                            <View
+                                android:id="@+id/divider"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="?android:attr/listDivider" />
+
+                            <TextView
+                                android:id="@+id/timestampTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="16dp"
+                                android:gravity="center_vertical"
+                                android:text="From: 13:00 - To: 15:00 "
+                                android:textSize="16sp" />
+
+                            <View
+                                android:id="@+id/divider2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="?android:attr/listDivider" />
+
+                            <TextView
+                                android:id="@+id/distanceTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="16dp"
+                                android:gravity="center_vertical"
+                                android:text="Distance: 10Km"
+                                android:textSize="16sp" />
+
+                            <View
+                                android:id="@+id/divider3"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="?android:attr/listDivider" />
+
+                            <TextView
+                                android:id="@+id/durationTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="16dp"
+                                android:gravity="center_vertical"
+                                android:text="Duration: 2h"
+                                android:textSize="16sp" />
+
+                            <Button
+                                android:id="@+id/flightExp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="flightContents"
+                                android:text="Flight Statistics" />
+
+                            <LinearLayout
+                                android:id="@+id/expandableFlightLinearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/velocityView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="Velocity" />
+
+                                    <com.jjoe64.graphview.GraphView
+                                        android:id="@+id/velocityGraph"
+                                        android:layout_width="310dp"
+                                        android:layout_height="200dip"
+                                        android:layout_marginStart="24dp" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/divider5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="?android:attr/listDivider" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/elevationView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="Elevation" />
+
+                                    <com.jjoe64.graphview.GraphView
+                                        android:id="@+id/elevationGraph"
+                                        android:layout_width="310dp"
+                                        android:layout_height="200dip"
+                                        android:layout_marginStart="24dp" />
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/divider12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="?android:attr/listDivider" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/cdRateView"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="Climb/Descent Rate" />
+
+                                    <com.jjoe64.graphview.GraphView
+                                        android:id="@+id/cdRateGraph"
+                                        android:layout_width="310dp"
+                                        android:layout_height="200dip"
+                                        android:layout_marginStart="24dp"
+                                        android:layout_marginTop="8dp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <Button
+                                android:id="@+id/environmentExp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="environmentContents"
+                                android:text="Environment Statistics" />
+
+                            <LinearLayout
+                                android:id="@+id/expandableEnvironmentLinearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/temperatureView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="Temperature" />
+
+                                    <com.jjoe64.graphview.GraphView
+                                        android:id="@+id/temperatureGraph"
+                                        android:layout_width="310dp"
+                                        android:layout_height="200dip"
+                                        android:layout_marginStart="24dp" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/divider8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="?android:attr/listDivider" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/humidityView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="Humidity" />
+
+                                    <com.jjoe64.graphview.GraphView
+                                        android:id="@+id/humidityGraph"
+                                        android:layout_width="310dp"
+                                        android:layout_height="200dip"
+                                        android:layout_marginStart="24dp" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/divider10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="?android:attr/listDivider" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/pressureView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="Pressure" />
+
+                                    <com.jjoe64.graphview.GraphView
+                                        android:id="@+id/pressureGraph"
+                                        android:layout_width="310dp"
+                                        android:layout_height="200dip"
+                                        android:layout_marginStart="24dp" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/divider11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="?android:attr/listDivider" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/uvView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="UV Index" />
+
+                                    <com.jjoe64.graphview.GraphView
+                                        android:id="@+id/uvGraph"
+                                        android:layout_width="310dp"
+                                        android:layout_height="200dip"
+                                        android:layout_marginStart="24dp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/divider13"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/listDivider" />
+
+                        </LinearLayout>
+                    </ScrollView>
+
+
+                </LinearLayout>
+
+                <!--_______________________________________________-->
+                <!--Activity Layout End-->
+            </android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+
+        <include layout="@layout/layout_drawer" />
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
