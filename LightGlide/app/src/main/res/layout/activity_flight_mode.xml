@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activities.MainActivity">
+
+                <!-- Activity Layout Start -->
+                <!--_______________________________________________-->
+
+                <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".activities.FlightMode">
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/myLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+                        <ScrollView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/flightScroll">
+
+                            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:id="@+id/Realtime"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                />
+
+                        </ScrollView>
+                        <Button
+                            android:id="@+id/terminate"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:text="Terminate Flight"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="443dp" />
+                    </RelativeLayout>
+
+
+
+                </android.support.constraint.ConstraintLayout>
+                <!--_______________________________________________-->
+                <!--Activity Layout End-->
+            </android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+
+        <include layout="@layout/layout_drawer"/>
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

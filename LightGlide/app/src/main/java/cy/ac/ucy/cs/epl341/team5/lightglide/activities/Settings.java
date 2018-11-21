@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 
+
 public class Settings extends AppCompatPreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     boolean changed = false;
     Intent call = null;
