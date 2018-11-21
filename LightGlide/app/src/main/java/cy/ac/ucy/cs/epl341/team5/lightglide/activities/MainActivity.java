@@ -44,6 +44,7 @@ public class MainActivity extends ParentActivity implements OnMapReadyCallback {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
+
 //        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
 //                .findFragmentById(R.id.g_map);
 //        mapFragment.getMapAsync(this);
