@@ -7,8 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 import cy.ac.ucy.cs.epl341.team5.lightglide.R;
 import cy.ac.ucy.cs.epl341.team5.lightglide.db.model.Flight;
@@ -22,7 +25,7 @@ public class FlightRecord extends ParentActivity {
     @Override
     public String provideTitle(Intent intent) {
         int receivedFlightID = intent.getExtras()!=null?intent.getExtras().getInt("flightID",0):0;
-        return "<INSERT RECEIVED FLIGHT ID>";
+        return intent.getStringExtra("flightName");
     }
 
     @Override
@@ -33,7 +36,7 @@ public class FlightRecord extends ParentActivity {
             int id = flight.getId();
             intent.putExtra("id",id);
             setResult(1, intent);
-            finish();
+            //finish();
         }
         else if (item.getItemId() == (R.id.deleteButton)){
             Intent intent = new Intent();
@@ -50,6 +53,7 @@ public class FlightRecord extends ParentActivity {
         return R.layout.activity_ft;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +62,29 @@ public class FlightRecord extends ParentActivity {
         expandableFlightLinearLayout = findViewById(R.id.expandableFlightLinearLayout);
         expandableFlightLinearLayout.setVisibility(View.GONE);
 
-        flight = new Flight(0, "wanLink", new Timestamp(0L), 50, 590.34, new Timestamp(1L), 87 );
+        Intent intent = getIntent();
+        flight = new Flight(intent.getExtras().getInt("flightID"),
+                intent.getExtras().getString("flightName"),
+                new Timestamp(intent.getExtras().getLong("flightStart")),
+                intent.getExtras().getInt("maxAltitude"),
+                intent.getExtras().getDouble("flightDistance"),
+                new Timestamp(intent.getExtras().getLong("flightEnd")),
+                intent.getExtras().getInt("flightDuration") );
 
+        TextView tv = findViewById(R.id.dateTextView);
+
+        Date date = new Date(flight.getStart().getTime() * 1000);
+        tv.setText("Date: " + new SimpleDateFormat("dd.MM.yyyy").format(date));
+
+        String timeS = new SimpleDateFormat("hh:mm:ss").format(date);
+        date = new Date(flight.getEnd().getTime() * 1000);
+        String timeE = new SimpleDateFormat("hh:mm:ss").format(date);
+        tv = findViewById(R.id.timestampTextView);
+        tv.setText("From: " + timeS + " - To: " + timeE);
+        tv = findViewById(R.id.distanceTextView);
+        tv.setText("Distance: " + (int) flight.getDistance() + "Km");
+        tv = findViewById(R.id.durationTextView);
+        tv.setText("Duration: " + (int) (flight.getDuration()/60.0) + "min");
     }
 
     public int optionsMenu(){

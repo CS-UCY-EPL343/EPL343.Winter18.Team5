@@ -12,9 +12,10 @@ public class PopRename extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_rename);
+        getActionBar().hide();
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-        getWindow().setLayout((int)(dm.widthPixels*0.75),(int)(dm.heightPixels*0.2));
+        getWindow().setLayout((int)(dm.widthPixels*0.75),(int)(dm.heightPixels*0.16));
     }
 }

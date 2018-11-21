@@ -43,7 +43,7 @@
                     <ScrollView
                         android:id="@+id/scrol"
                         android:layout_width="match_parent"
-                        android:layout_height="519dp"
+                        android:layout_height="wrap_content"
                         android:clipToPadding="true"
                         android:fillViewport="true">
 

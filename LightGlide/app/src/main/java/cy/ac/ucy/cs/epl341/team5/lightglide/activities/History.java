@@ -58,10 +58,15 @@ public class History extends ParentActivity {
         super.onCreate(savedInstanceState);
 
         flightList = findViewById(R.id.flightList);
-
-        Flight f = new Flight(0, "wanLink", new Timestamp(0L), 50, 590.34, new Timestamp(1L), 87 );
-        for (int i=0; i<5; i++){
-            flights.add(f);
+        for (int i=0; i<10; i++){
+            Timestamp timestampStart = new Timestamp ((long) (Math.random() * 10000000) + (1532575640));
+            Timestamp timestampEnd = new Timestamp ((long) ((Math.random() * 50800) + timestampStart.getTime()));
+            System.out.println(timestampStart);
+            System.out.println(timestampEnd.toString());
+            int maxAltitude = (int) (Math.random() * 1000) + 50;
+            double distance = (float) (Math.random() * 1000);
+            int duration = (int) ((timestampEnd.getTime() - timestampStart.getTime()));
+            flights.add(new Flight(i, "Flight Record - " + i, timestampStart, maxAltitude, distance, timestampEnd, duration ));
         }
 
         customAdapter = new CustomAdapter();
@@ -72,6 +77,13 @@ public class History extends ParentActivity {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                 Intent intent = new Intent(getApplicationContext(), FlightRecord.class);
                 intent.putExtra("flightID", flights.get(i).getId());
+                intent.putExtra("flightName", flights.get(i).getName());
+                intent.putExtra("flightStart", flights.get(i).getStart().getTime());
+                intent.putExtra("flightMaxAlt", flights.get(i).getMaxAltitude());
+                intent.putExtra("flightDistance", flights.get(i).getDistance());
+                intent.putExtra("flightEnd", flights.get(i).getEnd().getTime());
+                intent.putExtra("flightDuration", flights.get(i).getDuration());
+
                 startActivityForResult(intent, reqCode);
             }
         });
