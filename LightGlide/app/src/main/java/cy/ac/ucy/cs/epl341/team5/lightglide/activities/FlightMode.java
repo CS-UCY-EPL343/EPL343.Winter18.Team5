@@ -58,7 +58,7 @@ public class FlightMode extends ParentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        for(int i=0; i<7; i++) {
+        for(int i=0; i<6; i++) {
             useThem[i] = prefs.getBoolean(names[i], true);
             val[i]=new Integer(0);
         }
@@ -67,7 +67,7 @@ public class FlightMode extends ParentActivity {
         lL.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
         lL.setLayoutParams(params);
-        for (int i=0;i< 7;i++) {
+        for (int i=0;i< 6;i++) {
             if(useThem[i]) {
                 TextView tv = new TextView(this);
                 tv.setId(i);
@@ -75,29 +75,27 @@ public class FlightMode extends ParentActivity {
                 tv.setText(str);
                 //Ask how to get theme color
                 //tv.setTextColor(Color.BLACK);
-                tv.setPadding(80, 49, 80, 16);
+                tv.setPadding(80, 20, 80, 16);
                 lL.addView(tv);
 
-                if(names[i].equals("gps")){
 
-                }
-                else {
-                    TextView value = new TextView(this);
-                    value.setId(i + 69);
-                    str = val[i].toString();
-                    value.setText(str);
-                    value.setGravity(Gravity.CENTER);
-                    //Ask how to get theme color
-                    value.setPadding(80, 8, 80, 80);
-                    lL.addView(value);
-                    View v = new View(this);
-                    v.setLayoutParams(new LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            5
-                    ));
-                    v.setBackgroundColor(Color.parseColor("#B3B3B3"));
-                    lL.addView(v);
-                }
+                TextView value = new TextView(this);
+                value.setTextSize(36);
+                value.setId(i + 69);
+                str = val[i].toString();
+                value.setText(str);
+                value.setGravity(Gravity.CENTER);
+                //Ask how to get theme color
+                value.setPadding(80, 8, 80, 20);
+                lL.addView(value);
+                View v = new View(this);
+                v.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        5
+                ));
+                v.setBackgroundColor(Color.parseColor("#B3B3B3"));
+                lL.addView(v);
+
 
             }
         }
