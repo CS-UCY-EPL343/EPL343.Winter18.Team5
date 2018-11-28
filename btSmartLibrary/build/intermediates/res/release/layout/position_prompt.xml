@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/position_prompt"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Sensor number and Position: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/selectSensorNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/scan_button_style"
+        android:spinnerMode="dropdown" />
+
+    <Spinner
+        android:id="@+id/selectSensorPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/scan_button_style"
+        android:spinnerMode="dropdown" />
+
+
+
+        <requestFocus />
+
+
+
+</LinearLayout><!-- From: file:/C:/Users/Marios/ANDROID_WORKSPACE/BabyButton/btSmartLibrary/src/main/res/layout/position_prompt.xml -->

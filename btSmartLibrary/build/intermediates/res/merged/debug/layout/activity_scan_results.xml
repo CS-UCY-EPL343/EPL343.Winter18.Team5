@@ -1,0 +1,192 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/download"
+    tools:context=".HeartRateActivity"
+    android:longClickable="true"
+    android:contentDescription="DEMO">
+
+
+
+
+    <Button
+        android:id="@+id/buttonDemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:text="DEMO" />
+
+    <ListView
+        android:id="@+id/scanListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:layout_alignParentTop="true"
+        android:stackFromBottom="false"
+        android:layout_alignParentLeft="true"/>
+
+    <ImageButton
+    android:id="@+id/buttonScan"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:background="@null"
+    android:layout_below="@+id/scanListView"
+    android:layout_above="@+id/export_container_out"
+    android:layout_alignParentLeft="true"
+    android:contentDescription="Scan"
+    android:layout_marginBottom="15dp"
+    android:src="@drawable/scan_button_style" />
+
+
+    <LinearLayout
+        android:id="@+id/export_container_out"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+
+        <TextView
+            android:id="@+id/exportTitleSensors_out"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Export Data"
+            android:textColor="@color/black_text"
+            android:textSize="8pt"
+            android:textStyle="bold" />
+        <Spinner
+            android:id="@+id/exportThermId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scan_button_style"
+            android:spinnerMode="dropdown" />
+
+        <LinearLayout
+            android:id="@+id/from_export_container_out"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/exportTitleSensors_out"
+            android:background="@drawable/download"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp">
+
+
+            <TextView
+                android:id="@+id/exportFromDateLbl_out"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="From:  "
+                android:textStyle="bold"
+                android:textColor="@color/black_text"
+                android:textSize="8pt"
+
+
+                />
+            <TextView
+                android:id="@+id/exportFromDate_out"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="From Date (D-M-YYYY)"
+                android:background="@color/gray_background"
+                android:textSize="8pt"
+                />
+
+            <Button
+                android:id="@+id/exportFromBtn_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/button_shape"
+                android:text="Select"
+                android:textColor="@drawable/button_text_color"
+                android:textSize="6pt"
+                android:width="60dp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/to_export_container_out"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/from_export_container_out"
+            android:background="@drawable/download"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp">
+
+
+            <TextView
+                android:id="@+id/exportToDateLbl_out"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="To:      "
+                android:textStyle="bold"
+                android:textColor="@color/black_text"
+                android:textSize="8pt"
+
+
+                />
+            <TextView
+                android:id="@+id/exportToDate_out"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="To Date (D-M-YYYY)"
+                android:background="@color/gray_background"
+                android:textSize="8pt"
+                />
+
+            <Button
+                android:id="@+id/exportToBtn_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/button_shape"
+                android:text="Select"
+                android:textColor="@drawable/button_text_color"
+                android:textSize="6pt"
+                android:width="60dp" />
+
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/exportBtn_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:background="@drawable/button_shape"
+            android:text="Export"
+            android:textColor="@drawable/button_text_color"
+            android:layout_marginBottom="5dp"
+            android:textSize="8pt"
+            android:width="150dp" />
+
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/D:/SIGNALGENERIX/REPOS/sg_workspace/application/ANDROID_WORKSPACE/UVModule_UCY_PROJECT/btSmartLibrary/src/main/res/layout/activity_scan_results.xml -->
