@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">BtSmartLibrary</string>
+    <string name="action_settings">Settings</string>
+    <string name="connecting_status">Connecting…</string>
+    <string name="button_text_scan">Scan</string>
+    <string name="connected_status">Connected.</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

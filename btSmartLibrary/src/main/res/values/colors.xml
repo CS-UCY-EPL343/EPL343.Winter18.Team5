@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="background">#ffffffff</color>
+    <color name="device_name">@android:color/white</color>
+    <color name="status">#ffaaaaaa</color>
+    <color name="alarm_status_color">#ff00ff00</color>
+    <color name="rssi">#ffaaaaaa</color>
+
+
+
+    <color name="alarm_name_color">#ff000000</color>
+    <color name="alarm_value_color">#ff000000</color>
+
+    <color name="gray_background">#00E0E0E0</color>
+    <color name="black_text">#ff000000</color>
+
+
+</resources>
