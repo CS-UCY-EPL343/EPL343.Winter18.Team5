@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/D:/SIGNALGENERIX/REPOS/sg_workspace/application/ANDROID_WORKSPACE/UVModule_UCY_PROJECT/btSmartLibrary/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="alarm_name_color">#ff000000</color>
+    <color name="alarm_status_color">#ff00ff00</color>
+    <color name="alarm_value_color">#ff000000</color>
+    <color name="background">#ffffffff</color>
+    <color name="black_text">#ff000000</color>
+    <color name="device_name">@android:color/white</color>
+    <color name="gray_background">#00E0E0E0</color>
+    <color name="rssi">#ffaaaaaa</color>
+    <color name="status">#ffaaaaaa</color>
+    <!-- From: file:/D:/SIGNALGENERIX/REPOS/sg_workspace/application/ANDROID_WORKSPACE/UVModule_UCY_PROJECT/btSmartLibrary/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+    <!-- From: file:/D:/SIGNALGENERIX/REPOS/sg_workspace/application/ANDROID_WORKSPACE/UVModule_UCY_PROJECT/btSmartLibrary/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">BtSmartLibrary</string>
+    <string name="button_text_scan">Scan</string>
+    <string name="connected_status">Connected.</string>
+    <string name="connecting_status">Connecting…</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- From: file:/D:/SIGNALGENERIX/REPOS/sg_workspace/application/ANDROID_WORKSPACE/UVModule_UCY_PROJECT/btSmartLibrary/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>
